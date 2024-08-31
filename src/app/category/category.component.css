@@ -1,0 +1,83 @@
+.btn-submit {
+  background-color: #0056b3;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+  .btn-submit:hover {
+    background-color: #003d80;
+  }
+
+.btn-reset {
+  background-color: #17a2b8;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+  .btn-reset:hover {
+    background-color: #117a8b;
+  }
+
+.btn-edit {
+  background-color: #17a2b8;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+  .btn-edit:hover {
+    background-color: #117a8b;
+  }
+
+.btn-delete {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+  .btn-delete:hover {
+    background-color: #c82333;
+  }
+
+.button-group {
+  margin-top: 20px;
+}
+
+.form-table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table-header {
+  background-color: #f8f9fa;
+}
+
+.success-message {
+  color: rgb(0, 128, 0);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+.table-striped tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}

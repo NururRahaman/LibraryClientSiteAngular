@@ -1,0 +1,138 @@
+<div class="container">
+  <div class="header">
+    <h1>Welcome to the Library Management System</h1>
+  </div>
+
+  <div class="main">
+    <div class="sidebar">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/category" routerLinkActive="active">Category</a></li>
+        <li><a routerLink="/author" routerLinkActive="active">Author</a></li>
+        <li><a routerLink="/book" routerLinkActive="active">Book</a></li>
+        <li><a routerLink="/publisher" routerLinkActive="active">Publisher</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <!-- Router Outlet for dynamic content -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Container for the whole layout */
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  /* Header section styling */
+  .header {
+    background-color: /*#583737*/ #17444f; /* Match the sidebar background color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Main layout containing sidebar and content */
+  .main {
+    display: flex;
+    flex: 1;
+  }
+
+  /* Sidebar styling */
+  .sidebar {
+    width: 250px;
+    background-color: #17444f; /* Match the header background color */
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+    /* Sidebar list styling */
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+      /* Sidebar list item styling */
+      .sidebar ul li {
+        margin: 10px 0;
+      }
+
+        /* Sidebar links styling */
+        .sidebar ul li a {
+          text-decoration: none;
+          color: #f8f9fa; /* Light color to contrast with dark background */
+          font-size: 18px;
+        }
+
+          /* Active link styling */
+          .sidebar ul li a.active {
+            font-weight: bold;
+            color: #007bff; /* Accent color for active links */
+          }
+
+  /* Content section styling */
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+  }
+
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .main {
+      flex-direction: column;
+    }
+
+    .sidebar {
+      width: 100%;
+      height: auto;
+      padding: 10px;
+    }
+
+    .content {
+      padding: 15px;
+    }
+  }
+
+  /* Styling for the HomeComponent */
+  .home-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+    .home-container h2 {
+      font-size: 36px;
+      color: #343a40;
+      margin-bottom: 20px;
+    }
+
+    .home-container p {
+      font-size: 18px;
+      color: #555555;
+      margin-bottom: 40px;
+    }
+
+  .image-container {
+    text-align: center;
+  }
+
+    .image-container img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+</style>

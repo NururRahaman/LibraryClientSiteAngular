@@ -1,0 +1,91 @@
+<div class="container" style="width:100%">
+  <form [formGroup]="bookForm" (ngSubmit)="onFormSubmit()">
+    <div class="card">
+      <div class="card-header bg-info">
+        <h2 class="m-b-0 text-white">
+          <i class="fa fa-plus-circle" style="font-size:20px; margin:5px;"></i><small>Book Information</small>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div style="width:70%; margin: auto;">
+          <div class="form-group">
+            <label for="bookName">Book Name:</label>
+            <input id="bookName" formControlName="bookName" type="text" placeholder="Enter Book Name" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="categoryId">Category ID:</label>
+            <input id="categoryId" formControlName="categoryId" type="number" placeholder="Enter Category ID" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="authorId">Author ID:</label>
+            <input id="authorId" formControlName="authorId" type="number" placeholder="Enter Author ID" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="publisherId">Publisher ID:</label>
+            <input id="publisherId" formControlName="publisherId" type="number" placeholder="Enter Publisher ID" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <input id="description" formControlName="description" type="text" placeholder="Enter Description" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="edition">Edition:</label>
+            <input id="edition" formControlName="edition" type="text" placeholder="Enter Edition" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="price">Price:</label>
+            <input id="price" formControlName="price" type="number" placeholder="Enter Price" class="form-control">
+          </div>
+          <div class="form-check">
+            <input id="isActive" class="form-check-input" type="checkbox" formControlName="isActive" name="IsActive" />
+            <label class="form-check-label" for="isActive">
+              Is Active?
+            </label>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-submit" type="submit" [disabled]="!bookForm.valid">Submit</button>
+            <button class="btn btn-reset" type="reset" (click)="resetForm()">Reset</button>
+          </div>
+        </div>
+        <div style="width:100%; margin-top: 20px;">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="tbl-header">Book Name</th>
+                <th class="tbl-header">Category ID</th>
+                <th class="tbl-header">Publisher ID</th>
+                <th class="tbl-header">Author ID</th>
+                <th class="tbl-header">Description</th>
+                <th class="tbl-header">Edition</th>
+                <th class="tbl-header">Price</th>
+                <th class="tbl-header">isActive</th>
+                <th class="tbl-header">Edit</th>
+                <th class="tbl-header">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let book of allBooks | async">
+                <td>{{book.bookName}}</td>
+                <td>{{book.categoryId}}</td>
+                <td>{{book.publisherId}}</td>
+                <td>{{book.authorId}}</td>
+                <td>{{book.description}}</td>
+                <td>{{book.edition}}</td>
+                <td>{{book.price}}</td>
+                <td>{{book.isActive}}</td>
+                <td>
+                  <button type="button" class="btn btn-info btn-edit" (click)="loadBookToEdit(book.bookId)">Edit</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-danger btn-delete" (click)="deleteBookById(book.bookId)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
